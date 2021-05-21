@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Parents Tinder</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="image_of_the_place">Image of the place</string>
+    <string name="place_title">Place Title</string>
+    <string name="date">Date</string>
+    <string name="add_travel">add travel</string>
+    <string name="place_description">Place Description</string>
+    <string name="take_a_picture">Take a picture</string>
+    <string name="image_taken">image taken</string>
+    <string name="take_gps_position">take gps position</string>
+    <string name="username">Username</string>
+    <string name="share">Share</string>
+    <string name="login">LOGIN</string>
+    <string name="password">Password</string>
+</resources>
