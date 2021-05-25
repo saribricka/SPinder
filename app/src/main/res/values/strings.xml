@@ -21,4 +21,10 @@
     <string name="logo">Logo</string>
     <string name="remember_me">Remember me</string>
     <string name="signup">signup</string>
+    <string name="registrationPage">registration page</string>
+    <string name="confirm_email_address">Confirm email address</string>
+    <string name="Register">Register</string>
+    <string name="Email">Email</string>
+    <string name="LastName">LastName</string>
+    <string name="FirstName">FirstName</string>
 </resources>
