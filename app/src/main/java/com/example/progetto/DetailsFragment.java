@@ -86,9 +86,9 @@ public class DetailsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, v.getContext().getString(R.string.place_title) + ": " +
-                            placeTextView.getText().toString() + "\n" + v.getContext().getString(R.string.place_description) + ": " +
-                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.date) + ": " +
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, v.getContext().getString(R.string.user_name) + ": " +
+                            placeTextView.getText().toString() + "\n" + v.getContext().getString(R.string.bio_description) + ": " +
+                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.age) + ": " +
                             dateTextView.getText().toString());
 
                     sendIntent.setType("text/plain");

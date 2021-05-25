@@ -7,10 +7,14 @@
     android:layout_height="wrap_content"
     android:id="@+id/single_card"
     android:layout_margin="16dp"
+    android:background="?attr/selectableItemBackground"
+    android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="@dimen/cardview_default_radius"
+    app:cardCornerRadius="8dp"
     app:strokeWidth="1dp"
-    app:strokeColor="@color/material_on_surface_stroke">
+    app:strokeColor="@color/material_on_surface_stroke"
+    app:cardUseCompatPadding="true"
+    app:cardPreventCornerOverlap="false">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
@@ -20,9 +24,9 @@
         <ImageView
             android:id="@+id/placeImage"
             android:layout_width="match_parent"
-            android:layout_height="108dp"
+            android:layout_height="400dp"
             android:background="@color/purple_500"
-            android:contentDescription="@string/image_of_the_place"
+            android:contentDescription="@string/profile_pic"
             android:scaleType="centerCrop"
             tools:srcCompat="@tools:sample/backgrounds/scenic"
             android:src="@drawable/ic_launcher_foreground"/>
@@ -32,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="@string/place_title"
+            android:text="@string/user_name"
+            android:textStyle="bold"
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
         <TextView
@@ -40,8 +45,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="@string/date"
+            android:text="@string/bio_description"
+            android:textStyle="bold"
             android:textAppearance="?attr/textAppearanceBody2" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:id="@+id/left_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_not_interested_24"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/right_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_thumb_up_24"
+            android:layout_gravity="center"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/top_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/bottom_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
 </com.google.android.material.card.MaterialCardView>

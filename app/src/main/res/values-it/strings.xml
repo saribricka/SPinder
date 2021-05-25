@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Viaggi</string>
+    <string name="app_name">Childer</string>
     <string name="search">Ricerca</string>
     <string name="settings">Impostazioni</string>
-    <string name="image_of_the_place">Immagine del posto</string>
-    <string name="place_title">Titolo</string>
-    <string name="date">Data</string>
+    <string name="profile_pic">Immagine del profilo</string>
+    <string name="user_name">Nome</string>
+    <string name="age">Età</string>
     <string name="add_travel">Aggiungi Viaggio</string>
-    <string name="place_description">Descrizione del posto</string>
+    <string name="bio_description">Descriviti</string>
     <string name="take_a_picture">Scatta una foto</string>
     <string name="image_taken">foto scattata</string>
     <string name="take_gps_position">prendi posizione gps</string>

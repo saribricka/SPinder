@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/reload"
+        android:title="@string/reload"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/add_person_to_first"
+        android:title="@string/add_person_to_first"
+        app:showAsAction="ifRoom"/>
+
+</menu>
