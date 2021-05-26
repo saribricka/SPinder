@@ -69,7 +69,7 @@ import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
 public class AddFragment extends Fragment {
 
-    private TextInputEditText placeTextInputEditText;
+    private TextInputEditText usernameTextInputEditText;
     private TextInputEditText descriptionTextInputEditText;
     private TextInputEditText dateTextInputEditText;
 
@@ -162,7 +162,7 @@ public class AddFragment extends Fragment {
 
             Utilities.setUpToolbar((AppCompatActivity) activity, "Add Travel");
 
-            placeTextInputEditText = activity.findViewById(R.id.placeTextInputEditText);
+            usernameTextInputEditText = activity.findViewById(R.id.placeTextInputEditText);
             descriptionTextInputEditText = activity.findViewById(R.id.descriptionTextInputEditText);
             dateTextInputEditText = activity.findViewById(R.id.dateTextInputEditText);
 
@@ -210,7 +210,8 @@ public class AddFragment extends Fragment {
                         }
 
                         addViewModel.addCardItem(new CardItem(imageUriString,
-                                placeTextInputEditText.getText().toString(),
+                                usernameTextInputEditText.getText().toString(),
+
                                 descriptionTextInputEditText.getText().toString(),
                                 dateTextInputEditText.getText().toString()));
 
@@ -396,10 +397,10 @@ public class AddFragment extends Fragment {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    placeTextInputEditText.setText(response.get("name").toString());
+                    usernameTextInputEditText.setText(response.get("name").toString());
                     unRegisterNetworkCallback();
                 } catch (JSONException e) {
-                    placeTextInputEditText.setText("/");
+                    usernameTextInputEditText.setText("/");
                     e.printStackTrace();
                 }
             }

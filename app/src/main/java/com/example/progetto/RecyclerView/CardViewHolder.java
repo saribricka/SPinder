@@ -15,16 +15,20 @@ import com.example.progetto.R;
 public class CardViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
     ImageView imageCardView;
+    TextView nameTextView;
+    TextView birthdayTextView;
     TextView placeTextView;
-    TextView dateTextView;
+    TextView bio_descriptionTextView;
 
     private OnItemListener itemListener;
 
     CardViewHolder(@NonNull View itemView, OnItemListener lister) {
         super(itemView);
-        imageCardView = itemView.findViewById(R.id.placeImage);
+        imageCardView = itemView.findViewById(R.id.profileImage);
+        nameTextView = itemView.findViewById(R.id.nameTextView);
+        birthdayTextView = itemView.findViewById(R.id.birthdayTextView);
         placeTextView = itemView.findViewById(R.id.placeTextView);
-        dateTextView = itemView.findViewById(R.id.dateTextView);
+        bio_descriptionTextView = itemView.findViewById(R.id.bio_descriptionTextView);
         itemListener = lister;
 
         itemView.setOnClickListener(this);

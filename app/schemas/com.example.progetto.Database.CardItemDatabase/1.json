@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dc081da65825b901914a734b3b5862f6",
+    "identityHash": "3014af66785fc021603f52e0ca77848d",
     "entities": [
       {
         "tableName": "item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `item_place` TEXT, `item_description` TEXT, `item_date` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `age` INTEGER NOT NULL, `bio_description` TEXT, `place` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -21,20 +21,26 @@
             "notNull": false
           },
           {
+            "fieldPath": "user_name",
+            "columnName": "user_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "age",
+            "columnName": "age",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bio_description",
+            "columnName": "bio_description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "place",
-            "columnName": "item_place",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "description",
-            "columnName": "item_description",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "date",
-            "columnName": "item_date",
+            "columnName": "place",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -52,7 +58,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc081da65825b901914a734b3b5862f6')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3014af66785fc021603f52e0ca77848d')"
     ]
   }
 }

@@ -5,7 +5,7 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 /**
- * Class which represents every card item with its information (image, place, data, description)
+ * Class which represents every card item with its information (image, user_name, age, bio_description)
  */
 @Entity(tableName="item")
 public class CardItem {
@@ -15,35 +15,42 @@ public class CardItem {
     private int id;
     @ColumnInfo(name = "item_image")
     private String imageResource;
-    @ColumnInfo(name = "item_place")
+    @ColumnInfo(name = "user_name")
+    private String user_name;
+    @ColumnInfo(name = "birthday")
+    private String birthday;
+    @ColumnInfo(name = "place")
     private String place;
-    @ColumnInfo(name = "item_description")
-    private String description;
-    @ColumnInfo(name = "item_date")
-    private String date;
+    @ColumnInfo(name = "bio_description")
+    private String bio_description;
 
-    public CardItem(String imageResource, String place, String description, String date) {
+    public CardItem(String imageResource, String user_name, String birthday,
+                    String place, String bio_description) {
         this.imageResource = imageResource;
+        this.user_name = user_name;
+        this.birthday = birthday;
         this.place = place;
-        this.description = description;
-        this.date = date;
+        this.bio_description = bio_description;
     }
 
     public String getImageResource() {
         return imageResource;
     }
 
+    public String getUser_name() { return user_name; }
+
+    public String getBirthday() { return birthday; }
+
     public String getPlace() {
         return place;
     }
 
-    public String getDescription() {
-        return description;
+    public String getBio_description() {
+        return bio_description;
     }
 
-    public String getDate() {
-        return date;
-    }
+    //should i ask for birthday date or age an calculate it?
+    // public String getDate() { return date; }
 
     public int getId() {
         return id;

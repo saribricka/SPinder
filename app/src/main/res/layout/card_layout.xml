@@ -22,7 +22,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/placeImage"
+            android:id="@+id/profileImage"
             android:layout_width="match_parent"
             android:layout_height="400dp"
             android:background="@color/purple_500"
@@ -32,8 +32,8 @@
             android:src="@drawable/ic_launcher_foreground"/>
 
         <TextView
-            android:id="@+id/placeTextView"
-            android:layout_width="match_parent"
+            android:id="@+id/nameTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/user_name"
@@ -41,13 +41,30 @@
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
         <TextView
-            android:id="@+id/dateTextView"
+            android:id="@+id/birthdayTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="@string/age"
+            android:textStyle="bold"
+            android:textAppearance="?attr/textAppearanceBody2" />
+
+        <TextView
+            android:id="@+id/placeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/place"
+            android:textAppearance="?attr/textAppearanceOverline"/>
+
+        <TextView
+            android:id="@+id/bio_descriptionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:text="@string/bio_description"
             android:textStyle="bold"
-            android:textAppearance="?attr/textAppearanceBody2" />
+            android:textAppearance="?attr/textAppearanceBody2"/>
+
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

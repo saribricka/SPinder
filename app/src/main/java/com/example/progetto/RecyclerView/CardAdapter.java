@@ -86,7 +86,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
         }
 
         holder.placeTextView.setText(currentCardItem.getPlace());
-        holder.dateTextView.setText(currentCardItem.getDate());
+        holder.dateTextView.setText(currentCardItem.getBirthday());
     }
 
     @Override
@@ -122,7 +122,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
                 String filterPattern = constraint.toString().toLowerCase().trim();
 
                 for (CardItem item : cardItemListFiltered) {
-                    if (item.getDescription().toLowerCase().contains(filterPattern) ||
+                    if (item.getBio_description().toLowerCase().contains(filterPattern) ||
                             item.getPlace().toLowerCase().contains(filterPattern)) {
                         filteredList.add(item);
                     }
