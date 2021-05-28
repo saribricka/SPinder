@@ -70,8 +70,11 @@ import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 public class AddFragment extends Fragment {
 
     private TextInputEditText usernameTextInputEditText;
+    private TextInputEditText passwordTextInputEditText;
+    private TextInputEditText firstnameTextInputEditText;
+    private TextInputEditText lastnameTextInputEditText;
     private TextInputEditText descriptionTextInputEditText;
-    private TextInputEditText dateTextInputEditText;
+    private TextInputEditText birthdayTextInputEditText;
 
     private FusedLocationProviderClient fusedLocationClient;
     private LocationCallback locationCallback;
@@ -164,7 +167,7 @@ public class AddFragment extends Fragment {
 
             usernameTextInputEditText = activity.findViewById(R.id.placeTextInputEditText);
             descriptionTextInputEditText = activity.findViewById(R.id.descriptionTextInputEditText);
-            dateTextInputEditText = activity.findViewById(R.id.dateTextInputEditText);
+            birthdayTextInputEditText = activity.findViewById(R.id.dateTextInputEditText);
 
             view.findViewById(R.id.captureButton).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -211,9 +214,9 @@ public class AddFragment extends Fragment {
 
                         addViewModel.addCardItem(new CardItem(imageUriString,
                                 usernameTextInputEditText.getText().toString(),
-
+                                birthdayTextInputEditText.getText().toString(),
                                 descriptionTextInputEditText.getText().toString(),
-                                dateTextInputEditText.getText().toString()));
+                                birthdayTextInputEditText.getText().toString()));
 
                         addViewModel.setImageBitmpap(null);
 

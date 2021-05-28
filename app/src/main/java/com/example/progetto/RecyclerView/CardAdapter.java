@@ -86,11 +86,12 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
         }
 
         holder.placeTextView.setText(currentCardItem.getPlace());
-        holder.dateTextView.setText(currentCardItem.getBirthday());
+        holder.birthdayTextView.setText(currentCardItem.getBirthday());
     }
 
     @Override
     public int getItemCount() {
+
         return cardItemList.size();
     }
 
@@ -101,6 +102,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
      */
     @Override
     public Filter getFilter() {
+
         return cardFilter;
     }
 
@@ -161,6 +163,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
     }
 
     public CardItem getItemFiltered(int position) {
+
         return cardItemList.get(position);
     }
 

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "3014af66785fc021603f52e0ca77848d",
+    "identityHash": "4d2c023bbe0acff393d9ad5aa9387123",
     "entities": [
       {
         "tableName": "item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `age` INTEGER NOT NULL, `bio_description` TEXT, `place` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `birthday` TEXT, `place` TEXT, `bio_description` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -27,20 +27,20 @@
             "notNull": false
           },
           {
-            "fieldPath": "age",
-            "columnName": "age",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "bio_description",
-            "columnName": "bio_description",
+            "fieldPath": "birthday",
+            "columnName": "birthday",
             "affinity": "TEXT",
             "notNull": false
           },
           {
             "fieldPath": "place",
             "columnName": "place",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "bio_description",
+            "columnName": "bio_description",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -58,7 +58,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3014af66785fc021603f52e0ca77848d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4d2c023bbe0acff393d9ad5aa9387123')"
     ]
   }
 }

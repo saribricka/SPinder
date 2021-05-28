@@ -15,4 +15,16 @@
     <string name="login">LOGIN</string>
     <string name="password">Password</string>
     <string name="username">Username</string>
+    <string name="not_interested">non mi piace</string>
+    <string name="reload">ricarica</string>
+    <string name="interested">mi piace</string>
+    <string name="logo">Logo</string>
+    <string name="remember_me">Ricordami</string>
+    <string name="signup">registrati</string>
+    <string name="registrationPage">pagina di registrazione</string>
+    <string name="confirm_email_address">Conferma email</string>
+    <string name="Register">Registrami</string>
+    <string name="Email">Email</string>
+    <string name="LastName">Cognome</string>
+    <string name="FirstName">Nome</string>
 </resources>

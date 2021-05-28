@@ -52,7 +52,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
                 android:layout_marginTop="50dp"
-                android:hint="@string/user_name"
+                android:hint="@string/username"
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,13 +120,28 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reg_confirmemail"
+                android:id="@+id/birthday"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50.0dip"
-                android:layout_marginRight="50.0dip"
-                android:hint="@string/confirm_email_address"
-                android:inputType="textEmailAddress" />
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Birthday"
+                android:inputType="date|datetime" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:hint="Describe yourself"
+                android:inputType="text"/>
+
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
