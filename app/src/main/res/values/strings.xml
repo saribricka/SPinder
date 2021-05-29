@@ -28,4 +28,5 @@
     <string name="LastName">LastName</string>
     <string name="FirstName">FirstName</string>
     <string name="place">place</string>
+    <string name="birthday">Birthday</string>
 </resources>

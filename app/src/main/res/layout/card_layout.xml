@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
-            android:text="@string/age"
+            android:text="@string/birthday"
             android:textStyle="bold"
             android:textAppearance="?attr/textAppearanceBody2" />
 

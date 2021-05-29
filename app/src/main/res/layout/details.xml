@@ -19,7 +19,7 @@
             android:layout_margin="10dp">
 
             <ImageView
-                android:id="@+id/place_image"
+                android:id="@+id/profileImage"
                 android:layout_width="match_parent"
                 android:layout_height="108dp"
                 tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
@@ -29,7 +29,7 @@
                 android:background="@color/purple_500"/>
 
             <TextView
-                android:id="@+id/place_name"
+                android:id="@+id/placeTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/user_name"
@@ -38,7 +38,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"/>
 
             <TextView
-                android:id="@+id/travel_date"
+                android:id="@+id/birthdayTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/age"
@@ -47,7 +47,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
 
             <TextView
-                android:id="@+id/place_description"
+                android:id="@+id/bio_descriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/bio_description"

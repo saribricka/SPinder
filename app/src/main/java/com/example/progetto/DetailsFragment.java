@@ -28,10 +28,11 @@ import com.example.progetto.ViewModel.ListViewModel;
 
 public class DetailsFragment extends Fragment {
 
+    private TextView nameTextView;
     private TextView placeTextView;
-    private TextView dateTextView;
+    private TextView birthdayTextView;
     private TextView descriptionTextView;
-    private ImageView placeImageView;
+    private ImageView profileImageView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,10 +50,11 @@ public class DetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        placeTextView = view.findViewById(R.id.place_name);
-        descriptionTextView = view.findViewById(R.id.place_description);
-        dateTextView = view.findViewById(R.id.travel_date);
-        placeImageView = view.findViewById(R.id.place_image);
+        nameTextView = view.findViewById(R.id.nameTextView);
+        placeTextView = view.findViewById(R.id.placeTextView);
+        descriptionTextView = view.findViewById(R.id.bio_descriptionTextView);
+        birthdayTextView = view.findViewById(R.id.birthdayTextView);
+        profileImageView = view.findViewById(R.id.profileImage);
 
         Activity activity = getActivity();
         if (activity != null) {
@@ -62,20 +64,21 @@ public class DetailsFragment extends Fragment {
             listViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<CardItem>() {
                 @Override
                 public void onChanged(CardItem cardItem) {
+                    nameTextView.setText(cardItem.getUser_name());
                     placeTextView.setText(cardItem.getPlace());
-                    descriptionTextView.setText(cardItem.getDescription());
-                    dateTextView.setText(cardItem.getDate());
+                    descriptionTextView.setText(cardItem.getBio_description());
+                    birthdayTextView.setText(cardItem.getBirthday());
                     String image_path = cardItem.getImageResource();
                     if (image_path.contains("ic_")) {
                         Drawable drawable = ContextCompat.getDrawable(activity, activity.getResources()
                                 .getIdentifier(image_path, "drawable",
                                         activity.getPackageName()));
-                        placeImageView.setImageDrawable(drawable);
+                        profileImageView.setImageDrawable(drawable);
                     } else {
                         Bitmap bitmap = Utilities.getImageBitmap(activity, Uri.parse(image_path));
                         if (bitmap != null){
-                            placeImageView.setImageBitmap(bitmap);
-                            placeImageView.setBackgroundColor(Color.WHITE);
+                            profileImageView.setImageBitmap(bitmap);
+                            profileImageView.setBackgroundColor(Color.WHITE);
                         }
                     }
                 }
@@ -87,9 +90,10 @@ public class DetailsFragment extends Fragment {
                 public void onClick(View v) {
                     Intent sendIntent = new Intent(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, v.getContext().getString(R.string.user_name) + ": " +
+                            nameTextView.getText().toString() + "\n" + v.getContext().getString(R.string.place) + ":" +
                             placeTextView.getText().toString() + "\n" + v.getContext().getString(R.string.bio_description) + ": " +
-                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.age) + ": " +
-                            dateTextView.getText().toString());
+                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.birthday) + ": " +
+                            birthdayTextView.getText().toString());
 
                     sendIntent.setType("text/plain");
                     if (v.getContext() != null &&

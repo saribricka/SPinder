@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText username, password, reg_username, reg_password,
-            reg_firstName, reg_lastName, reg_email, reg_confirmemail;
+            reg_firstName, reg_lastName, reg_email, reg_birthday, reg_description;
     private Button login, signUp, reg_register;
     private TextInputLayout txtInLayoutUsername, txtInLayoutPassword, txtInLayoutRegPassword;
     private CheckBox rememberMe;
@@ -97,7 +97,8 @@ public class LoginActivity extends AppCompatActivity {
         reg_firstName = dialogView.findViewById(R.id.reg_firstName);
         reg_lastName = dialogView.findViewById(R.id.reg_lastName);
         reg_email = dialogView.findViewById(R.id.reg_email);
-        reg_confirmemail = dialogView.findViewById(R.id.reg_confirmemail);
+        reg_birthday = dialogView.findViewById(R.id.reg_birthday);
+        reg_description = dialogView.findViewById(R.id.reg_description);
         reg_register = dialogView.findViewById(R.id.reg_register);
         txtInLayoutRegPassword = dialogView.findViewById(R.id.txtInLayoutRegPassword);
 
@@ -136,11 +137,17 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     //Here you can write the codes for checking email
                 }
-                if (reg_confirmemail.getText().toString().trim().isEmpty()) {
+                if (reg_birthday.getText().toString().trim().isEmpty()) {
 
-                    reg_confirmemail.setError("Please fill out this field");
+                    reg_birthday.setError("Please fill out this field");
                 } else {
-                    //Here you can write the codes for checking confirmemail
+                    //Here you can write the codes for checking birthday date
+                }
+                if (reg_description.getText().toString().trim().isEmpty()) {
+
+                    reg_description.setError("Please fill out this field");
+                } else {
+                    //Here you can write the codes for checking description
                 }
             }
         });
