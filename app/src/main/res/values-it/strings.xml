@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Childer</string>
+    <string name="app_name">SPinder</string>
     <string name="search">Ricerca</string>
     <string name="settings">Impostazioni</string>
     <string name="profile_pic">Immagine del profilo</string>
@@ -27,4 +27,7 @@
     <string name="Email">Email</string>
     <string name="LastName">Cognome</string>
     <string name="FirstName">Nome</string>
+    <string name="birthday">Compleanno</string>
+    <string name="place">luogo</string>
+    <string name="add_person_to_first">aggiungi persona all\'inizio</string>
 </resources>
