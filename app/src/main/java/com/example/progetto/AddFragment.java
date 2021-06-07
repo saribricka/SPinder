@@ -73,8 +73,10 @@ public class AddFragment extends Fragment {
     private TextInputEditText passwordTextInputEditText;
     private TextInputEditText firstnameTextInputEditText;
     private TextInputEditText lastnameTextInputEditText;
-    private TextInputEditText descriptionTextInputEditText;
+    private TextInputEditText emailTextInputEditText;
     private TextInputEditText birthdayTextInputEditText;
+    private TextInputEditText cityTextInputEditText;
+    private TextInputEditText descriptionTextInputEditText;
 
     private FusedLocationProviderClient fusedLocationClient;
     private LocationCallback locationCallback;
@@ -165,9 +167,14 @@ public class AddFragment extends Fragment {
 
             Utilities.setUpToolbar((AppCompatActivity) activity, "Add Travel");
 
-            usernameTextInputEditText = activity.findViewById(R.id.placeTextInputEditText);
-            descriptionTextInputEditText = activity.findViewById(R.id.descriptionTextInputEditText);
-            birthdayTextInputEditText = activity.findViewById(R.id.dateTextInputEditText);
+            usernameTextInputEditText = activity.findViewById(R.id.reg_username);
+            passwordTextInputEditText = activity.findViewById(R.id.reg_password);
+            firstnameTextInputEditText = activity.findViewById(R.id.reg_firstName);
+            lastnameTextInputEditText = activity.findViewById(R.id.reg_lastName);
+            emailTextInputEditText = activity.findViewById(R.id.reg_email);
+            birthdayTextInputEditText = activity.findViewById(R.id.reg_birthday);
+            cityTextInputEditText = activity.findViewById(R.id.reg_city);
+            descriptionTextInputEditText = activity.findViewById(R.id.reg_description);
 
             view.findViewById(R.id.captureButton).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -214,9 +221,13 @@ public class AddFragment extends Fragment {
 
                         addViewModel.addCardItem(new CardItem(imageUriString,
                                 usernameTextInputEditText.getText().toString(),
+                                passwordTextInputEditText.getText().toString(),
+                                firstnameTextInputEditText.getText().toString(),
+                                lastnameTextInputEditText.getText().toString(),
+                                emailTextInputEditText.getText().toString(),
                                 birthdayTextInputEditText.getText().toString(),
-                                descriptionTextInputEditText.getText().toString(),
-                                birthdayTextInputEditText.getText().toString()));
+                                cityTextInputEditText.getText().toString(),
+                                descriptionTextInputEditText.getText().toString()));
 
                         addViewModel.setImageBitmpap(null);
 

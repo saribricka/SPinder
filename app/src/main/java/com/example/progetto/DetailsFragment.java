@@ -28,9 +28,9 @@ import com.example.progetto.ViewModel.ListViewModel;
 
 public class DetailsFragment extends Fragment {
 
-    private TextView nameTextView;
-    private TextView placeTextView;
+    private TextView firstnameTextView;
     private TextView birthdayTextView;
+    private TextView placeTextView;
     private TextView descriptionTextView;
     private ImageView profileImageView;
 
@@ -50,10 +50,10 @@ public class DetailsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        nameTextView = view.findViewById(R.id.nameTextView);
+        firstnameTextView = view.findViewById(R.id.nameTextView);
+        birthdayTextView = view.findViewById(R.id.birthdayTextView);
         placeTextView = view.findViewById(R.id.placeTextView);
         descriptionTextView = view.findViewById(R.id.bio_descriptionTextView);
-        birthdayTextView = view.findViewById(R.id.birthdayTextView);
         profileImageView = view.findViewById(R.id.profileImage);
 
         Activity activity = getActivity();
@@ -64,7 +64,7 @@ public class DetailsFragment extends Fragment {
             listViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<CardItem>() {
                 @Override
                 public void onChanged(CardItem cardItem) {
-                    nameTextView.setText(cardItem.getUser_name());
+                    firstnameTextView.setText(cardItem.getUser_name());
                     placeTextView.setText(cardItem.getPlace());
                     descriptionTextView.setText(cardItem.getBio_description());
                     birthdayTextView.setText(cardItem.getBirthday());
@@ -89,11 +89,11 @@ public class DetailsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT, v.getContext().getString(R.string.user_name) + ": " +
-                            nameTextView.getText().toString() + "\n" + v.getContext().getString(R.string.place) + ":" +
-                            placeTextView.getText().toString() + "\n" + v.getContext().getString(R.string.bio_description) + ": " +
-                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.birthday) + ": " +
-                            birthdayTextView.getText().toString());
+                    sendIntent.putExtra(Intent.EXTRA_TEXT,
+                            v.getContext().getString(R.string.user_name) + ": " + firstnameTextView.getText().toString() +
+                                    "\n" + v.getContext().getString(R.string.place) + ":" + placeTextView.getText().toString() +
+                                    "\n" + v.getContext().getString(R.string.bio_description) + ": " + descriptionTextView.getText().toString() +
+                                    "\n" + v.getContext().getString(R.string.birthday) + ": " + birthdayTextView.getText().toString());
 
                     sendIntent.setType("text/plain");
                     if (v.getContext() != null &&

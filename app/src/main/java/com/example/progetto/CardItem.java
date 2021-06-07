@@ -17,6 +17,14 @@ public class CardItem {
     private String imageResource;
     @ColumnInfo(name = "user_name")
     private String user_name;
+    @ColumnInfo(name = "password")
+    private String password;
+    @ColumnInfo(name = "first_name")
+    private String firstname;
+    @ColumnInfo(name = "last_name")
+    private String lastname;
+    @ColumnInfo(name = "email")
+    private String email;
     @ColumnInfo(name = "birthday")
     private String birthday;
     @ColumnInfo(name = "place")
@@ -24,10 +32,15 @@ public class CardItem {
     @ColumnInfo(name = "bio_description")
     private String bio_description;
 
-    public CardItem(String imageResource, String user_name, String birthday,
+    public CardItem(String imageResource, String user_name, String password,
+                    String firstname, String lastname, String email, String birthday,
                     String place, String bio_description) {
         this.imageResource = imageResource;
         this.user_name = user_name;
+        this.password = password;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
         this.birthday = birthday;
         this.place = place;
         this.bio_description = bio_description;
@@ -39,6 +52,12 @@ public class CardItem {
 
     public String getUser_name() { return user_name; }
 
+    public String getFirstname() { return firstname; }
+
+    public String getLastname() { return lastname; }
+
+    public String getEmail() { return email; }
+
     public String getBirthday() { return birthday; }
 
     public String getPlace() {
@@ -48,9 +67,6 @@ public class CardItem {
     public String getBio_description() {
         return bio_description;
     }
-
-    //should i ask for birthday date or age an calculate it?
-    // public String getDate() { return date; }
 
     public int getId() {
         return id;
