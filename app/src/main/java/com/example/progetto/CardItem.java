@@ -52,6 +52,8 @@ public class CardItem {
 
     public String getUser_name() { return user_name; }
 
+    public String getPassword() { return password; }
+
     public String getFirstname() { return firstname; }
 
     public String getLastname() { return lastname; }

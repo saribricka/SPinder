@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "4d2c023bbe0acff393d9ad5aa9387123",
+    "identityHash": "f83b3af68742f71c45dc337d37dd6545",
     "entities": [
       {
         "tableName": "item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `birthday` TEXT, `place` TEXT, `bio_description` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `password` TEXT, `first_name` TEXT, `last_name` TEXT, `email` TEXT, `birthday` TEXT, `place` TEXT, `bio_description` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -23,6 +23,30 @@
           {
             "fieldPath": "user_name",
             "columnName": "user_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "password",
+            "columnName": "password",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "firstname",
+            "columnName": "first_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastname",
+            "columnName": "last_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "email",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -58,7 +82,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4d2c023bbe0acff393d9ad5aa9387123')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f83b3af68742f71c45dc337d37dd6545')"
     ]
   }
 }
