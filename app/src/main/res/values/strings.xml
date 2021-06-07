@@ -29,4 +29,7 @@
     <string name="FirstName">FirstName</string>
     <string name="place">place</string>
     <string name="birthday">Birthday</string>
+    <string name="error_field_required">ERROR: field required</string>
+    <string name="error_invalid_password">ERROR: invalid password</string>
+    <string name="error_invalid_username">ERROR: invalid username</string>
 </resources>
