@@ -32,4 +32,5 @@
     <string name="error_field_required">ERROR: field required</string>
     <string name="error_invalid_password">ERROR: invalid password</string>
     <string name="error_invalid_username">ERROR: invalid username</string>
+    <string name="city">City</string>
 </resources>

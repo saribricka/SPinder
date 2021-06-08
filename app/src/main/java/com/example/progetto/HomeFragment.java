@@ -78,17 +78,15 @@ public class HomeFragment extends Fragment implements OnItemListener{
                 }
             });
 
-            /**
-             * Recupero view fab_add, implement listener button, onclick it opens another fragment
-             *             FloatingActionButton floatingActionButton = view.findViewById(R.id.fab_add);
-             *
-             *             floatingActionButton.setOnClickListener(new View.OnClickListener() {
-             *                 @Override
-             *                 public void onClick(View view) {
-             *                     Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(), "AddFragment");
-             *                 }
-             *             });
-             */
+            //signup button in first login page takes me to add pic
+            FloatingActionButton floatingActionButton = view.findViewById(R.id.signUp);
+            floatingActionButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(), "AddFragment");
+                }
+            });
+
 
         } else {
             Log.e(LOG, "Activity is null");

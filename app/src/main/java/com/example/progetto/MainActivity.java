@@ -17,6 +17,7 @@ import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 public class MainActivity extends AppCompatActivity {
 
     private static final String FRAGMENT_TAG_HOME = "HomeFragment";
+    private static final String ACTIVITY_TAG_LOGIN = "LoginActivity";
 
     private AddViewModel addViewModel;
 
@@ -26,8 +27,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //if there was no configuration change, create the fragment
-        if (savedInstanceState == null)
+        if (savedInstanceState == null) {
+            //TODO: you need to change LoginActivity to non <>
+            Utilities.insertFragment(this, new LoginActivity<>(), ACTIVITY_TAG_LOGIN);
+        } else {
             Utilities.insertFragment(this, new HomeFragment(), FRAGMENT_TAG_HOME);
+        }
 
         addViewModel = new ViewModelProvider(this).get(AddViewModel.class);
     }
