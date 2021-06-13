@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         addViewModel = new ViewModelProvider(this).get(AddViewModel.class);
+
     }
 
     @Override
