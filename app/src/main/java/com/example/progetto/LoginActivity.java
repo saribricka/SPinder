@@ -8,12 +8,14 @@ import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -138,6 +140,14 @@ public class LoginActivity<UserLoginTask> extends AppCompatActivity {
             }
         });
     }
+
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        //Inflate the layout for this fragment
+        return inflater.inflate(R.layout.activity_login_studio, container, false);
+    }
+
+
 
     /**
      * Attempts to sign in or register the account specified by the login form.

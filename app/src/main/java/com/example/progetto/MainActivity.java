@@ -3,14 +3,18 @@ package com.example.progetto;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.progetto.ViewModel.AddViewModel;
+import com.example.progetto.ui.login.LoginActivityStudio;
 
 import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
@@ -24,13 +28,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         //if there was no configuration change, create the fragment
         if (savedInstanceState == null) {
-            //TODO: you need to change LoginActivity to non <>
-            Utilities.insertFragment(this, new LoginActivity<>(), ACTIVITY_TAG_LOGIN);
+            setContentView(R.layout.activity_login_studio);
+
         } else {
+            setContentView(R.layout.activity_main);
             Utilities.insertFragment(this, new HomeFragment(), FRAGMENT_TAG_HOME);
         }
 
