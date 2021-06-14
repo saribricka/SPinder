@@ -4,11 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
-    app:layout_constraintBottom_toTopOf="@id/Constraint2"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/logo"
@@ -17,7 +13,7 @@
         android:layout_marginEnd="8.0dip"
         android:layout_marginStart="8.0dip"
         android:contentDescription="@string/logo"
-        android:src="@drawable/ic_baseline_star_24"
+        android:src="@drawable/ic_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

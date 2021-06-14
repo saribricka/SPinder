@@ -2,7 +2,6 @@ package com.example.progetto.ui.login;
 
 import android.app.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -16,7 +15,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,8 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.progetto.R;
-import com.example.progetto.ui.login.LoginViewModel;
-import com.example.progetto.ui.login.LoginViewModelFactory;
 
 public class LoginActivityStudio extends AppCompatActivity {
 
@@ -35,13 +31,14 @@ public class LoginActivityStudio extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_studio);
+        setContentView(R.layout.log_in);
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
         final EditText usernameEditText = findViewById(R.id.username);
         final EditText passwordEditText = findViewById(R.id.password);
         final Button loginButton = findViewById(R.id.login);
+        final Button signupButton = findViewById(R.id.signUp);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {

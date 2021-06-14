@@ -3,160 +3,124 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loginContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="parent">
-
-    <include layout="@layout/topbar"/>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/Constraint2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@layout/topbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="parent">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInLayoutUsername"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@id/txtInLayoutPassword"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/username"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_android_24"
-                android:drawableLeft="@drawable/ic_baseline_android_24"
-                android:hint="@string/user_name"
-                android:inputType="text" />
-        </com.google.android.material.textfield.TextInputLayout>
+    android:paddingLeft="8dp"
+    android:paddingTop="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    tools:context=".ui.login.LoginActivityStudio">
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/txtInLayoutPassword"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginBottom="8.0dip"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInLayoutUsername"
-            app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_baseline_lock_24"
-                android:drawableLeft="@drawable/ic_baseline_lock_24"
-                android:hint="@string/password"
-                android:inputType="textPassword" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/Constraint3"
+<com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInLayoutUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginRight="32dp"
         android:layout_marginStart="32dp"
-        android:gravity="center_vertical"
-        app:layout_constraintBottom_toBottomOf="@id/Constraint2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/Constraint4"
-        app:layout_constraintVertical_bias="0.7">
-
-        <CheckBox
-            android:id="@+id/remember_me"
-            android:text="@string/remember_me"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/Constraint4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         android:layout_marginLeft="32dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginStart="32dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintHeight_percent="90"
+        app:layout_constraintBottom_toTopOf="@id/txtInLayoutPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Constraint2">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/login"
-            android:layout_width="0dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8.0dip"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8.0dip"
-            android:layout_weight="1.0"
-            android:text="@string/login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/signUp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:drawableStart="@drawable/ic_baseline_android_24"
+            android:drawableLeft="@drawable/ic_baseline_android_24"
+            android:hint="@string/user_name"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/signUp"
-            android:layout_width="0dp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtInLayoutPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="8.0dip"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/remember_me"
+        app:layout_constraintTop_toBottomOf="@+id/txtInLayoutUsername"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8.0dip"
-            android:layout_marginEnd="8.0dip"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8.0dip"
-            android:layout_weight="1.0"
-            android:text="@string/signup"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/login"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:drawableLeft="@drawable/ic_baseline_lock_24"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <CheckBox
+        android:id="@+id/remember_me"
+        android:text="@string/remember_me"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginLeft="32dp"
+        app:layout_constraintTop_toBottomOf="@id/txtInLayoutPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/login" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8.0dip"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1.0"
+        android:text="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/signUp"
+        app:layout_constraintStart_toStartOf="@id/remember_me"
+        app:layout_constraintTop_toBottomOf="@id/remember_me"/>
+
+    <Button
+        android:id="@+id/signUp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8.0dip"
+        android:layout_weight="1.0"
+        android:text="@string/signup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/login"
+        app:layout_constraintEnd_toEndOf="@id/remember_me"
+        app:layout_constraintTop_toBottomOf="@id/remember_me" />
+
+    <ProgressBar
+        android:id="@+id/loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/remember_me"
+        app:layout_constraintStart_toStartOf="@id/remember_me"
+        app:layout_constraintTop_toBottomOf="@id/signUp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

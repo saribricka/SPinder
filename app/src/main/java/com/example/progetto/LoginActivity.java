@@ -144,7 +144,7 @@ public class LoginActivity<UserLoginTask> extends AppCompatActivity {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         //Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_login_studio, container, false);
+        return inflater.inflate(R.layout.log_in, container, false);
     }
 
 
