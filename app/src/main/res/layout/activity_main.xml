@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <include layout="@layout/topbar"/>
-    <include layout="@layout/card_layout"/>
+    <include layout="@layout/home"/>
     <include layout="@layout/buttons"/>
 
     <androidx.fragment.app.FragmentContainerView
