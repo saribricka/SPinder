@@ -10,6 +10,7 @@
     <include layout="@layout/topbar"/>
     <include layout="@layout/home"/>
     <include layout="@layout/buttons"/>
+    <include layout="@layout/bottomnav"/>
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_view"

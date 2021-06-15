@@ -1,17 +1,28 @@
 package com.example.progetto.ui.login;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
+import com.example.progetto.HomeFragment;
+import com.example.progetto.Utilities;
 import com.example.progetto.data.LoginRepository;
 import com.example.progetto.data.Result;
 import com.example.progetto.data.model.LoggedInUser;
 import com.example.progetto.R;
 
 public class LoginViewModel extends ViewModel {
+
+    /**
+     * A dummy authentication store containing known user names and passwords.
+     * TODO: remove after connecting to a real authentication system.
+     */
+    private static final String[] DUMMY_CREDENTIALS = new String[]{
+            "saribricka:unibo", "chiacecca:mobile21", "cprandi:gamification"
+    };
 
     private MutableLiveData<LoginFormState> loginFormState = new MutableLiveData<>();
     private MutableLiveData<LoginResult> loginResult = new MutableLiveData<>();
@@ -25,9 +36,7 @@ public class LoginViewModel extends ViewModel {
         return loginFormState;
     }
 
-    LiveData<LoginResult> getLoginResult() {
-        return loginResult;
-    }
+    LiveData<LoginResult> getLoginResult() { return loginResult; }
 
     public void login(String username, String password) {
         // can be launched in a separate asynchronous job
@@ -55,6 +64,8 @@ public class LoginViewModel extends ViewModel {
     private boolean isUserNameValid(String username) {
         if (username == null) {
             return false;
+        } else if (username == "saribricka") {
+            return true;
         }
         if (username.contains("@")) {
             return Patterns.EMAIL_ADDRESS.matcher(username).matches();
@@ -65,6 +76,6 @@ public class LoginViewModel extends ViewModel {
 
     // A placeholder password validation check
     private boolean isPasswordValid(String password) {
-        return password != null && password.trim().length() > 5;
+        return password != null && password.trim().length() > 5 && password == "mobile21";
     }
 }

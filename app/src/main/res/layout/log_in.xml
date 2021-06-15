@@ -15,7 +15,7 @@
     tools:context=".ui.login.LoginActivityStudio">
 
 
-<com.google.android.material.textfield.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInLayoutUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,9 +25,9 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="0dp"
-        app:layout_constraintHeight_percent="90"
         app:layout_constraintBottom_toTopOf="@id/txtInLayoutPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="90"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -37,7 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_android_24"
-            android:drawableLeft="@drawable/ic_baseline_android_24"
             android:hint="@string/user_name"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -52,10 +51,10 @@
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:layout_marginBottom="8.0dip"
-        app:layout_constraintHeight_percent=".5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/remember_me"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtInLayoutUsername"
         app:passwordToggleEnabled="true">
 
@@ -64,7 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_lock_24"
-            android:drawableLeft="@drawable/ic_baseline_lock_24"
             android:hint="@string/password"
             android:inputType="textPassword" />
 
@@ -73,28 +71,15 @@
 
     <CheckBox
         android:id="@+id/remember_me"
-        android:text="@string/remember_me"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintTop_toBottomOf="@id/txtInLayoutPassword"
+        android:layout_marginStart="32dp"
+        android:text="@string/remember_me"
+        app:layout_constraintBottom_toTopOf="@id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/login" />
-
-    <Button
-        android:id="@+id/login"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8.0dip"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1.0"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/signUp"
-        app:layout_constraintStart_toStartOf="@id/remember_me"
-        app:layout_constraintTop_toBottomOf="@id/remember_me"/>
+        app:layout_constraintTop_toBottomOf="@id/txtInLayoutPassword" />
 
     <Button
         android:id="@+id/signUp"
@@ -105,8 +90,21 @@
         android:layout_weight="1.0"
         android:text="@string/signup"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/login"
+        app:layout_constraintEnd_toStartOf="@id/login"
+        app:layout_constraintStart_toStartOf="@id/remember_me"
+        app:layout_constraintTop_toBottomOf="@id/remember_me" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8.0dip"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1.0"
+        android:text="@string/login"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/remember_me"
+        app:layout_constraintStart_toEndOf="@id/signUp"
         app:layout_constraintTop_toBottomOf="@id/remember_me" />
 
     <ProgressBar
@@ -122,5 +120,12 @@
         app:layout_constraintEnd_toEndOf="@id/remember_me"
         app:layout_constraintStart_toStartOf="@id/remember_me"
         app:layout_constraintTop_toBottomOf="@id/signUp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -22,7 +23,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.progetto.MainActivity;
 import com.example.progetto.R;
+import com.example.progetto.RegistrationActivity;
 
 public class LoginActivityStudio extends AppCompatActivity {
 
@@ -114,6 +117,17 @@ public class LoginActivityStudio extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+                Intent loginIntent = new Intent(v.getContext(), MainActivity.class);
+                startActivityForResult(loginIntent, 0);
+            }
+        });
+
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadingProgressBar.setVisibility(View.VISIBLE);
+                Intent signupIntent = new Intent(v.getContext(), RegistrationActivity.class);
+                startActivity(signupIntent);
             }
         });
     }

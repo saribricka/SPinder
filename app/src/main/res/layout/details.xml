@@ -41,7 +41,7 @@
                 android:id="@+id/birthdayTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/age"
+                android:text="@string/birthday"
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>

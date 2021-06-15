@@ -9,6 +9,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -79,8 +80,8 @@ public class HomeFragment extends Fragment implements OnItemListener{
             });
 
             //signup button in first login page takes me to add pic
-            FloatingActionButton floatingActionButton = view.findViewById(R.id.signUp);
-            floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            Button signupButton = view.findViewById(R.id.signUp);
+            signupButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(), "AddFragment");

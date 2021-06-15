@@ -34,11 +34,10 @@
         android:theme="@style/Theme.Progetto">
         <activity
             android:name=".ui.login.LoginActivityStudio"
-            android:label="@string/title_activity_login_studio"></activity>
+            android:label="@string/title_activity_login_studio" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
