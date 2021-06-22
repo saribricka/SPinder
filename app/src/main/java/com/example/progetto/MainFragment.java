@@ -9,7 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -89,8 +88,7 @@ public class MainFragment extends Fragment implements OnItemListener{
             });
 
             //signup button in first login page takes me to sign up fragment
-            Button signupButton = view.findViewById(R.id.signupBt);
-            signupButton.setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.signupBt).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Utilities.insertFragment((AppCompatActivity) activity, new SignupFragment(), "SignupFragment");
@@ -100,7 +98,14 @@ public class MainFragment extends Fragment implements OnItemListener{
             view.findViewById(R.id.loginBt).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new HomePageFragment(), "HomeFragment");
+                    Utilities.insertFragment((AppCompatActivity) activity, new MainFragment(), "MainFragment");
+                }
+            });
+
+            view.findViewById(R.id.homeNav).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.insertFragment((AppCompatActivity) activity, new HomePageFragment(), "HomePageFragment");
                 }
             });
 

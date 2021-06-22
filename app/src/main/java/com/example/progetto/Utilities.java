@@ -2,12 +2,14 @@ package com.example.progetto;
 
 import android.app.Activity;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -73,5 +75,8 @@ public class Utilities {
         drawable.draw(canvas);
 
         return bitmap;
+    }
+
+    public static void displayRoundImageFromUrl(Context context, String profileUrl, ImageView profileImage) {
     }
 }

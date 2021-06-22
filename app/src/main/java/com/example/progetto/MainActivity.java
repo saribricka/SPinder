@@ -1,6 +1,5 @@
 package com.example.progetto;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -18,9 +17,6 @@ import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String FRAGMENT_TAG_HOME = "HomeFragment";
-    private static final String FRAGMENT_TAG_LOGIN = "LoginActivity";
-
     private AddViewModel addViewModel;
     public BottomNavigationView nav;
 
@@ -30,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if (savedInstanceState == null) {
-            Utilities.insertFragment(this, new LoginFragment(), FRAGMENT_TAG_LOGIN);
+            Utilities.insertFragment(this, new LoginFragment(), "LoginFragment");
         } else {
-            Utilities.insertFragment(this, new HomePageFragment(), FRAGMENT_TAG_HOME);
+            Utilities.insertFragment(this, new MainFragment(), "MainFragment");
         }
 
         nav = findViewById(R.id.bottomnav);
@@ -47,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.homeNav:
-                        Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "HomePageFragment");
+                        Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "MainFragment");
                         return true;
 
                     case R.id.profileNav:
@@ -61,6 +57,27 @@ public class MainActivity extends AppCompatActivity {
 
                 }
                 return false;
+            }
+        });
+
+        nav.setOnNavigationItemReselectedListener(new BottomNavigationView.OnNavigationItemReselectedListener() {
+            @Override
+            public void onNavigationItemReselected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+
+                    case R.id.messageNav:
+                        Utilities.insertFragment(MainActivity.this, new ChatFragment(), "ChatFragment");
+
+                    case R.id.homeNav:
+                        Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "HomePageFragment");
+
+                    case R.id.profileNav:
+                        if (savedInstanceState == null) {
+                            Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
+                        } else {
+                            Utilities.insertFragment(MainActivity.this, new DetailsFragment(), "DetailsFragment");
+                        }
+                }
             }
         });
 

@@ -15,6 +15,8 @@ public class SmsFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.messagging, container, false);
+        return inflater.inflate(R.layout.conversation, container, false);
+
     }
+
 }
