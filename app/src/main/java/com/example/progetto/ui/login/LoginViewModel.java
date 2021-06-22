@@ -1,14 +1,11 @@
 package com.example.progetto.ui.login;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import android.util.Patterns;
 
-import com.example.progetto.HomeFragment;
-import com.example.progetto.Utilities;
 import com.example.progetto.data.LoginRepository;
 import com.example.progetto.data.Result;
 import com.example.progetto.data.model.LoggedInUser;

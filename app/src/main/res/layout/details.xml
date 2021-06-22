@@ -21,7 +21,7 @@
             <ImageView
                 android:id="@+id/profileImage"
                 android:layout_width="match_parent"
-                android:layout_height="108dp"
+                android:layout_height="220dp"
                 tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
                 android:contentDescription="@string/profile_pic"
                 android:layout_margin="10dp"
@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/bio_description"
                 android:layout_margin="10dp"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
 
             <Button

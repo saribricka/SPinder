@@ -77,7 +77,7 @@ public class LoginActivity<UserLoginTask> extends AppCompatActivity {
         password.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int id, KeyEvent event) {
-                if ( id == R.id.login || id == EditorInfo.IME_NULL){
+                if ( id == R.id.loginBt || id == EditorInfo.IME_NULL){
                     attemptLogin();
                     return true;
                 }
@@ -85,8 +85,8 @@ public class LoginActivity<UserLoginTask> extends AppCompatActivity {
             }
         });
 
-        login = findViewById(R.id.login);
-        signUp = findViewById(R.id.signUp);
+        login = findViewById(R.id.loginBt);
+        signUp = findViewById(R.id.signupBt);
         txtInLayoutUsername = findViewById(R.id.txtInLayoutUsername);
         txtInLayoutPassword = findViewById(R.id.txtInLayoutPassword);
         rememberMe = findViewById(R.id.remember_me);

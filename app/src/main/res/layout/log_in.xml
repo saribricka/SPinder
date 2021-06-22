@@ -76,13 +76,13 @@
         android:layout_margin="16dp"
         android:layout_marginStart="32dp"
         android:text="@string/remember_me"
-        app:layout_constraintBottom_toTopOf="@id/login"
+        app:layout_constraintBottom_toTopOf="@id/loginBt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtInLayoutPassword" />
 
     <Button
-        android:id="@+id/signUp"
+        android:id="@+id/signupBt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -90,12 +90,12 @@
         android:layout_weight="1.0"
         android:text="@string/signup"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/login"
+        app:layout_constraintEnd_toStartOf="@id/loginBt"
         app:layout_constraintStart_toStartOf="@id/remember_me"
         app:layout_constraintTop_toBottomOf="@id/remember_me" />
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/loginBt"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8.0dip"
@@ -104,7 +104,7 @@
         android:text="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/remember_me"
-        app:layout_constraintStart_toEndOf="@id/signUp"
+        app:layout_constraintStart_toEndOf="@id/signupBt"
         app:layout_constraintTop_toBottomOf="@id/remember_me" />
 
     <ProgressBar
@@ -119,7 +119,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/remember_me"
         app:layout_constraintStart_toStartOf="@id/remember_me"
-        app:layout_constraintTop_toBottomOf="@id/signUp" />
+        app:layout_constraintTop_toBottomOf="@id/signupBt" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

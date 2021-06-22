@@ -37,7 +37,9 @@ public class Utilities {
         transaction.replace(R.id.fragment_container_view, fragment, tag);
 
         //add the transaction to the back stack so the user can navigate back
-        if (!(fragment instanceof HomeFragment) && !(fragment instanceof SettingsFragment)) {
+        if (!(fragment instanceof MainFragment) && !(fragment instanceof SettingsFragment) &&
+                !(fragment instanceof LoginFragment) && !(fragment instanceof SignupFragment) &&
+                    !(fragment instanceof  SmsFragment) && !(fragment instanceof ChatFragment)) {
             transaction.addToBackStack(tag);
         }
 

@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -25,18 +27,25 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.progetto.RecyclerView.CardAdapter;
 import com.example.progetto.RecyclerView.OnItemListener;
 import com.example.progetto.ViewModel.ListViewModel;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class HomeFragment extends Fragment implements OnItemListener{
+public class MainFragment extends Fragment implements OnItemListener{
 
     private static final String LOG = "Home-Fragment_LAB";
 
     private CardAdapter adapter;
     private RecyclerView recyclerView;
-
     private ListViewModel listViewModel;
+
+    final Fragment fragmentMessage = new SmsFragment();
+    final Fragment fragmentChat = new ChatFragment();
+    final Fragment fragmentHome = new HomePageFragment();
+    final Fragment fragmentProfile = new DetailsFragment();
+    final FragmentManager fm = getChildFragmentManager();
+    FragmentTransaction fragmentTransaction = fm.beginTransaction();
+
+    Fragment active = fragmentHome;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -57,7 +66,7 @@ public class HomeFragment extends Fragment implements OnItemListener{
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.home, container, false);
+        return inflater.inflate(R.layout.activity_main, container, false);
     }
 
     @Override
@@ -79,12 +88,33 @@ public class HomeFragment extends Fragment implements OnItemListener{
                 }
             });
 
-            //signup button in first login page takes me to add pic
-            Button signupButton = view.findViewById(R.id.signUp);
+            //signup button in first login page takes me to sign up fragment
+            Button signupButton = view.findViewById(R.id.signupBt);
             signupButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new AddFragment(), "AddFragment");
+                    Utilities.insertFragment((AppCompatActivity) activity, new SignupFragment(), "SignupFragment");
+                }
+            });
+
+            view.findViewById(R.id.loginBt).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.insertFragment((AppCompatActivity) activity, new HomePageFragment(), "HomeFragment");
+                }
+            });
+
+            view.findViewById(R.id.messageNav).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.insertFragment((AppCompatActivity) activity, new ChatFragment(), "ChatFragment");
+                }
+            });
+
+            view.findViewById(R.id.profileNav).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Utilities.insertFragment((AppCompatActivity) activity, new DetailsFragment(), "DetailsFragment");
                 }
             });
 
