@@ -7,6 +7,7 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -24,7 +25,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelStoreOwner;
 
+import com.example.progetto.ViewModel.AddViewModel;
 import com.example.progetto.ViewModel.ListViewModel;
+
+import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
 public class ProfileFragment extends Fragment {
 
@@ -61,8 +65,8 @@ public class ProfileFragment extends Fragment {
                 @Override
                 public void onChanged(CardItem cardItem) {
                     placeTextView.setText(cardItem.getPlace());
-                    descriptionTextView.setText(cardItem.getBio_description());
-                    dateTextView.setText(cardItem.getBirthday());
+                    descriptionTextView.setText(cardItem.getDescription());
+                    dateTextView.setText(cardItem.getDate());
                     String image_path = cardItem.getImageResource();
                     if (image_path.contains("ic_")) {
                         Drawable drawable = ContextCompat.getDrawable(activity, activity.getResources()
@@ -96,6 +100,27 @@ public class ProfileFragment extends Fragment {
                     }
                 }
             });
+
+            view.findViewById(R.id.captureButton).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    // Ensure that there is a camera activity to handle the intent
+                    if (takePictureIntent.resolveActivity(activity.getPackageManager()) != null) {
+                        activity.startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
+                    }
+                }
+            });
+
+            ImageView imageView = view.findViewById(R.id.imageView);
+            AddViewModel addViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(AddViewModel.class);
+            addViewModel.getBitmap().observe(getViewLifecycleOwner(), new Observer<Bitmap>() {
+                @Override
+                public void onChanged(Bitmap bitmap) {
+                    imageView.setImageBitmap(bitmap);
+                }
+            });
+
         }
     }
 

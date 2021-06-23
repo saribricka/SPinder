@@ -220,14 +220,9 @@ public class AddFragment extends Fragment {
                         }
 
                         addViewModel.addCardItem(new CardItem(imageUriString,
-                                usernameTextInputEditText.getText().toString(),
-                                passwordTextInputEditText.getText().toString(),
-                                firstnameTextInputEditText.getText().toString(),
-                                lastnameTextInputEditText.getText().toString(),
-                                emailTextInputEditText.getText().toString(),
-                                birthdayTextInputEditText.getText().toString(),
                                 cityTextInputEditText.getText().toString(),
-                                descriptionTextInputEditText.getText().toString()));
+                                descriptionTextInputEditText.getText().toString(),
+                                birthdayTextInputEditText.getText().toString()));
 
                         addViewModel.setImageBitmpap(null);
 

@@ -6,8 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/topbar" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -16,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_margin="10dp">
+            android:layout_marginTop="60dp">
 
             <ImageView
                 android:id="@+id/profile_image"
@@ -32,7 +30,7 @@
                 android:id="@+id/place_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/user_name"
+                android:text="Jhon McSean"
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"/>
@@ -41,7 +39,7 @@
                 android:id="@+id/date_pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/birthday"
+                android:text="12/11/1994"
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
@@ -50,7 +48,7 @@
                 android:id="@+id/pic_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/bio_description"
+                android:text="I love cooking and rock climbing"
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>

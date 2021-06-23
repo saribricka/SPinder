@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "f83b3af68742f71c45dc337d37dd6545",
+    "identityHash": "dc081da65825b901914a734b3b5862f6",
     "entities": [
       {
         "tableName": "item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `user_name` TEXT, `password` TEXT, `first_name` TEXT, `last_name` TEXT, `email` TEXT, `birthday` TEXT, `place` TEXT, `bio_description` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `item_place` TEXT, `item_description` TEXT, `item_date` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -21,50 +21,20 @@
             "notNull": false
           },
           {
-            "fieldPath": "user_name",
-            "columnName": "user_name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "password",
-            "columnName": "password",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "firstname",
-            "columnName": "first_name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "lastname",
-            "columnName": "last_name",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "email",
-            "columnName": "email",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "birthday",
-            "columnName": "birthday",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "place",
-            "columnName": "place",
+            "columnName": "item_place",
             "affinity": "TEXT",
             "notNull": false
           },
           {
-            "fieldPath": "bio_description",
-            "columnName": "bio_description",
+            "fieldPath": "description",
+            "columnName": "item_description",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "item_date",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -82,7 +52,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f83b3af68742f71c45dc337d37dd6545')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc081da65825b901914a734b3b5862f6')"
     ]
   }
 }
