@@ -13,15 +13,17 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/placeTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/user_name"
+                android:hint="@string/place_name"
                 app:endIconMode="clear_text"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -42,7 +44,7 @@
                 android:backgroundTint="@color/white"
                 android:contentDescription="@string/take_gps_position"
                 android:src="@drawable/ic_baseline_gps_fixed_24"
-                android:tint="@color/black"
+                android:tint="@color/purple_200"
                 app:layout_constraintBottom_toBottomOf="@+id/placeTextInputLayout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -57,11 +59,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/dateTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/age"
+                android:hint="@string/when_pic_was_taken"
                 app:endIconMode="clear_text"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -78,11 +79,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/descriptionTextInputLayout"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:hint="@string/bio_description"
+                android:hint="@string/write_something_about_the_picture"
                 app:endIconMode="clear_text"
                 app:errorEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,7 +100,6 @@
             <Button
                 android:layout_margin="10dp"
                 android:id="@+id/captureButton"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/take_a_picture"
@@ -121,6 +120,16 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/captureButton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/go_to_profile"
+                android:text="@string/go_to_profile"
+                android:layout_margin="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

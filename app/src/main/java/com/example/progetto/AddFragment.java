@@ -165,7 +165,7 @@ public class AddFragment extends Fragment {
 
             requestQueue = Volley.newRequestQueue(activity);
 
-            Utilities.setUpToolbar((AppCompatActivity) activity, "Add Travel");
+            Utilities.setUpToolbar((AppCompatActivity) activity, "SettingsFragment");
 
             usernameTextInputEditText = activity.findViewById(R.id.reg_username);
             passwordTextInputEditText = activity.findViewById(R.id.reg_password);
@@ -245,7 +245,7 @@ public class AddFragment extends Fragment {
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
 
-        menu.findItem(R.id.app_bar_search).setVisible(false);
+        menu.findItem(R.id.app_bar_settings).setVisible(true);
     }
 
     /**

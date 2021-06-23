@@ -24,11 +24,11 @@ public class CardViewHolder extends RecyclerView.ViewHolder implements View.OnCl
 
     CardViewHolder(@NonNull View itemView, OnItemListener lister) {
         super(itemView);
-        imageCardView = itemView.findViewById(R.id.profileImage);
+        imageCardView = itemView.findViewById(R.id.profile_image);
         nameTextView = itemView.findViewById(R.id.nameTextView);
-        birthdayTextView = itemView.findViewById(R.id.birthdayTextView);
-        placeTextView = itemView.findViewById(R.id.placeTextView);
-        bio_descriptionTextView = itemView.findViewById(R.id.bio_descriptionTextView);
+        birthdayTextView = itemView.findViewById(R.id.date_pic);
+        placeTextView = itemView.findViewById(R.id.place_name);
+        bio_descriptionTextView = itemView.findViewById(R.id.pic_description);
         itemListener = lister;
 
         itemView.setOnClickListener(this);

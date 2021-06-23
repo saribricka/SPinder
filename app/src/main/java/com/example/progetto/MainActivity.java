@@ -5,12 +5,14 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.progetto.ViewModel.AddViewModel;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
@@ -43,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.homeNav:
-                        Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "MainFragment");
+                        Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "HomePageFragment");
                         return true;
 
                     case R.id.profileNav:
                         if (savedInstanceState == null) {
-                            Utilities.insertFragment(MainActivity.this, new SignupFragment(), "SignupFragment");
+                            Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
                             return true;
                         } else {
-                            Utilities.insertFragment(MainActivity.this, new DetailsFragment(), "DetailsFragment");
+                            Utilities.insertFragment(MainActivity.this, new ProfileFragment(), "ProfileFragment");
                             return true;
                         }
 
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                         if (savedInstanceState == null) {
                             Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
                         } else {
-                            Utilities.insertFragment(MainActivity.this, new DetailsFragment(), "DetailsFragment");
+                            Utilities.insertFragment(MainActivity.this, new ProfileFragment(), "ProfileFragment");
                         }
                 }
             }

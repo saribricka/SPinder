@@ -46,4 +46,10 @@
     <string name="home">Home</string>
     <string name="profile">Profile</string>
     <string name="proceed">Proceed</string>
+    <string name="when_pic_was_taken">When pic was taken</string>
+    <string name="write_something_about_the_picture">Write something about the picture</string>
+    <string name="place_name">Place name</string>
+    <string name="go_to_profile">Go to profile</string>
+    <string name="date">Date</string>
+    <string name="place_description">Description</string>
 </resources>

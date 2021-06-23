@@ -19,17 +19,17 @@
             android:layout_margin="10dp">
 
             <ImageView
-                android:id="@+id/profileImage"
+                android:id="@+id/profile_image"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
                 tools:srcCompat="@tools:sample/backgrounds/scenic[1]"
                 android:contentDescription="@string/profile_pic"
                 android:layout_margin="10dp"
-                android:src="@drawable/ic_baseline_android_24"
-                android:background="@color/purple_500"/>
+                android:src="@drawable/ic_logo"
+                android:background="@color/purple_200"/>
 
             <TextView
-                android:id="@+id/placeTextView"
+                android:id="@+id/place_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/user_name"
@@ -38,7 +38,7 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"/>
 
             <TextView
-                android:id="@+id/birthdayTextView"
+                android:id="@+id/date_pic"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/birthday"
@@ -47,13 +47,26 @@
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"/>
 
             <TextView
-                android:id="@+id/bio_descriptionTextView"
+                android:id="@+id/pic_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/bio_description"
                 android:layout_margin="10dp"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"/>
+
+            <Button
+                android:id="@+id/captureButton"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/take_a_picture"
+                app:icon="@drawable/ic_baseline_add_a_photo_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descriptionTextInputLayout"
+                android:layout_gravity="center"
+                android:layout_margin="10dp" />
 
             <Button
                 android:id="@+id/shareButton"

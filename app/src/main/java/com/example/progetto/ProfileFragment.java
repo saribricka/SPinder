@@ -26,48 +26,43 @@ import androidx.lifecycle.ViewModelStoreOwner;
 
 import com.example.progetto.ViewModel.ListViewModel;
 
-public class DetailsFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
-    private TextView firstnameTextView;
-    private TextView birthdayTextView;
     private TextView placeTextView;
+    private TextView dateTextView;
     private TextView descriptionTextView;
     private ImageView profileImageView;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setHasOptionsMenu(true);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.details, container,false);
+        return inflater.inflate(R.layout.profile, container,false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        firstnameTextView = view.findViewById(R.id.nameTextView);
-        birthdayTextView = view.findViewById(R.id.birthdayTextView);
-        placeTextView = view.findViewById(R.id.placeTextView);
-        descriptionTextView = view.findViewById(R.id.bio_descriptionTextView);
-        profileImageView = view.findViewById(R.id.profileImage);
+        placeTextView = view.findViewById(R.id.place_name);
+        dateTextView = view.findViewById(R.id.date_pic);
+        descriptionTextView = view.findViewById(R.id.pic_description);
+        profileImageView = view.findViewById(R.id.profile_image);
 
         Activity activity = getActivity();
         if (activity != null) {
-            Utilities.setUpToolbar((AppCompatActivity) activity, "Details");
 
             ListViewModel listViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(ListViewModel.class);
             listViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<CardItem>() {
                 @Override
                 public void onChanged(CardItem cardItem) {
-                    firstnameTextView.setText(cardItem.getUser_name());
                     placeTextView.setText(cardItem.getPlace());
                     descriptionTextView.setText(cardItem.getBio_description());
-                    birthdayTextView.setText(cardItem.getBirthday());
+                    dateTextView.setText(cardItem.getBirthday());
                     String image_path = cardItem.getImageResource();
                     if (image_path.contains("ic_")) {
                         Drawable drawable = ContextCompat.getDrawable(activity, activity.getResources()
@@ -76,7 +71,7 @@ public class DetailsFragment extends Fragment {
                         profileImageView.setImageDrawable(drawable);
                     } else {
                         Bitmap bitmap = Utilities.getImageBitmap(activity, Uri.parse(image_path));
-                        if (bitmap != null){
+                        if (bitmap != null) {
                             profileImageView.setImageBitmap(bitmap);
                             profileImageView.setBackgroundColor(Color.WHITE);
                         }
@@ -89,11 +84,10 @@ public class DetailsFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Intent sendIntent = new Intent(Intent.ACTION_SEND);
-                    sendIntent.putExtra(Intent.EXTRA_TEXT,
-                            v.getContext().getString(R.string.user_name) + ": " + firstnameTextView.getText().toString() +
-                                    "\n" + v.getContext().getString(R.string.place) + ":" + placeTextView.getText().toString() +
-                                    "\n" + v.getContext().getString(R.string.bio_description) + ": " + descriptionTextView.getText().toString() +
-                                    "\n" + v.getContext().getString(R.string.birthday) + ": " + birthdayTextView.getText().toString());
+                    sendIntent.putExtra(Intent.EXTRA_TEXT, v.getContext().getString(R.string.place_name) + ": " +
+                            placeTextView.getText().toString() + "\n" + v.getContext().getString(R.string.place_description) + ": " +
+                            descriptionTextView.getText().toString() + "\n" + v.getContext().getString(R.string.date) + ": " +
+                            dateTextView.getText().toString());
 
                     sendIntent.setType("text/plain");
                     if (v.getContext() != null &&
@@ -105,10 +99,4 @@ public class DetailsFragment extends Fragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-
-        menu.findItem(R.id.app_bar_search).setVisible(false);
-    }
 }

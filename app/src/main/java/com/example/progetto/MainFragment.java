@@ -40,7 +40,7 @@ public class MainFragment extends Fragment implements OnItemListener{
     final Fragment fragmentMessage = new SmsFragment();
     final Fragment fragmentChat = new ChatFragment();
     final Fragment fragmentHome = new HomePageFragment();
-    final Fragment fragmentProfile = new DetailsFragment();
+    final Fragment fragmentProfile = new ProfileFragment();
     final FragmentManager fm = getChildFragmentManager();
     FragmentTransaction fragmentTransaction = fm.beginTransaction();
 
@@ -87,8 +87,6 @@ public class MainFragment extends Fragment implements OnItemListener{
                 }
             });
 
-
-
         } else {
             Log.e(LOG, "Activity is null");
         }
@@ -114,8 +112,8 @@ public class MainFragment extends Fragment implements OnItemListener{
         if (appCompatActivity != null) {
             listViewModel.select(adapter.getItemFiltered(position));
 
-            Utilities.insertFragment(appCompatActivity, new DetailsFragment(),
-                    DetailsFragment.class.getSimpleName());
+            Utilities.insertFragment(appCompatActivity, new ProfileFragment(),
+                    ProfileFragment.class.getSimpleName());
         }
     }
 
