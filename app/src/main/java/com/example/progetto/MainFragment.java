@@ -87,41 +87,6 @@ public class MainFragment extends Fragment implements OnItemListener{
                 }
             });
 
-            //signup button in first login page takes me to sign up fragment
-            view.findViewById(R.id.signupBt).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new SignupFragment(), "SignupFragment");
-                }
-            });
-
-            view.findViewById(R.id.loginBt).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new MainFragment(), "MainFragment");
-                }
-            });
-
-            view.findViewById(R.id.homeNav).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new HomePageFragment(), "HomePageFragment");
-                }
-            });
-
-            view.findViewById(R.id.messageNav).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new ChatFragment(), "ChatFragment");
-                }
-            });
-
-            view.findViewById(R.id.profileNav).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Utilities.insertFragment((AppCompatActivity) activity, new DetailsFragment(), "DetailsFragment");
-                }
-            });
 
 
         } else {

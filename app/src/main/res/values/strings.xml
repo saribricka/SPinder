@@ -45,4 +45,5 @@
     <string name="messages">Messages</string>
     <string name="home">Home</string>
     <string name="profile">Profile</string>
+    <string name="proceed">Proceed</string>
 </resources>

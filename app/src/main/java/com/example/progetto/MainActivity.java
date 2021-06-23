@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.profileNav:
                         if (savedInstanceState == null) {
-                            Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
+                            Utilities.insertFragment(MainActivity.this, new SignupFragment(), "SignupFragment");
                             return true;
                         } else {
                             Utilities.insertFragment(MainActivity.this, new DetailsFragment(), "DetailsFragment");

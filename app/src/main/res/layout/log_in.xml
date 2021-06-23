@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,7 +17,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInLayoutUsername"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
@@ -43,7 +43,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtInLayoutPassword"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
@@ -81,31 +81,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtInLayoutPassword" />
 
-    <Button
-        android:id="@+id/signupBt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8.0dip"
-        android:layout_weight="1.0"
-        android:text="@string/signup"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/loginBt"
-        app:layout_constraintStart_toStartOf="@id/remember_me"
-        app:layout_constraintTop_toBottomOf="@id/remember_me" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp">
 
-    <Button
-        android:id="@+id/loginBt"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8.0dip"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1.0"
-        android:text="@string/login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/remember_me"
-        app:layout_constraintStart_toEndOf="@id/signupBt"
-        app:layout_constraintTop_toBottomOf="@id/remember_me" />
+        <Button
+            android:id="@+id/signupBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:layout_marginEnd="8.0dip"
+            android:text="@string/signup"
+            android:layout_alignParentLeft="true"/>
+
+        <Button
+            android:id="@+id/loginBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8.0dip"
+            android:layout_marginEnd="80dp"
+            android:text="@string/login"
+            android:layout_alignParentRight="true"/>
+
+
+    </RelativeLayout>
 
     <ProgressBar
         android:id="@+id/loading"
@@ -128,4 +128,4 @@
         android:orientation="vertical"
         app:layout_constraintGuide_begin="20dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

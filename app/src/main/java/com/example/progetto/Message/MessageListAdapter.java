@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.progetto.DateFormatter;
 import com.example.progetto.R;
 import com.example.progetto.Utilities;
 
