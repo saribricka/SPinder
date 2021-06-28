@@ -3,17 +3,25 @@ package com.example.progetto;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.progetto.RecyclerView.CardAdapter;
 import com.example.progetto.ViewModel.AddViewModel;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import swipeable.com.layoutmanager.OnItemSwiped;
+import swipeable.com.layoutmanager.SwipeableLayoutManager;
+import swipeable.com.layoutmanager.SwipeableTouchHelperCallback;
+import swipeable.com.layoutmanager.touchelper.ItemTouchHelper;
 
 import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
@@ -34,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         nav = findViewById(R.id.bottomnav);
+        nav.setSelectedItemId(R.id.profileNav);
         nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -42,18 +51,22 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.messageNav:
                         Utilities.insertFragment(MainActivity.this, new ChatFragment(), "ChatFragment");
+                        nav.getMenu().findItem(R.id.messageNav).setChecked(true);
                         return true;
 
                     case R.id.homeNav:
                         Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "HomePageFragment");
+                        nav.getMenu().findItem(R.id.homeNav).setChecked(true);
                         return true;
 
                     case R.id.profileNav:
                         if (savedInstanceState == null) {
                             Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
+                            nav.getMenu().findItem(R.id.profileNav).setChecked(true);
                             return true;
                         } else {
                             Utilities.insertFragment(MainActivity.this, new ProfileFragment(), "ProfileFragment");
+                            nav.getMenu().findItem(R.id.profileNav).setChecked(true);
                             return true;
                         }
 
@@ -69,15 +82,19 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.messageNav:
                         Utilities.insertFragment(MainActivity.this, new ChatFragment(), "ChatFragment");
+                        nav.getMenu().findItem(R.id.messageNav).setChecked(true);
 
                     case R.id.homeNav:
                         Utilities.insertFragment(MainActivity.this, new HomePageFragment(), "HomePageFragment");
+                        nav.getMenu().findItem(R.id.homeNav).setChecked(true);
 
                     case R.id.profileNav:
                         if (savedInstanceState == null) {
                             Utilities.insertFragment(MainActivity.this, new LoginFragment(), "LoginFragment");
+                            nav.getMenu().findItem(R.id.profileNav).setChecked(true);
                         } else {
                             Utilities.insertFragment(MainActivity.this, new ProfileFragment(), "ProfileFragment");
+                            nav.getMenu().findItem(R.id.profileNav).setChecked(true);
                         }
                 }
             }

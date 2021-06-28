@@ -40,7 +40,7 @@ public class Utilities {
 
         //add the transaction to the back stack so the user can navigate back
         if (!(fragment instanceof MainFragment) && !(fragment instanceof SettingsFragment) &&
-                !(fragment instanceof LoginFragment) && !(fragment instanceof SignupFragment) &&
+                !(fragment instanceof LoginFragment) && !(fragment instanceof SignupTotFragment) &&
                     !(fragment instanceof  SmsFragment) && !(fragment instanceof ChatFragment)) {
             transaction.addToBackStack(tag);
         }

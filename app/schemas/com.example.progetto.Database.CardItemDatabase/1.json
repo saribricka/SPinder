@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dc081da65825b901914a734b3b5862f6",
+    "identityHash": "bae4dd94957bc05e82a7ea2a75960dc4",
     "entities": [
       {
         "tableName": "item",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `item_place` TEXT, `item_description` TEXT, `item_date` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`item_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `item_image` TEXT, `item_user` TEXT, `item_date` TEXT, `item_place` TEXT, `item_description` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -21,6 +21,18 @@
             "notNull": false
           },
           {
+            "fieldPath": "username",
+            "columnName": "item_user",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "item_date",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "place",
             "columnName": "item_place",
             "affinity": "TEXT",
@@ -29,12 +41,6 @@
           {
             "fieldPath": "description",
             "columnName": "item_description",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "date",
-            "columnName": "item_date",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -52,7 +58,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc081da65825b901914a734b3b5862f6')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bae4dd94957bc05e82a7ea2a75960dc4')"
     ]
   }
 }

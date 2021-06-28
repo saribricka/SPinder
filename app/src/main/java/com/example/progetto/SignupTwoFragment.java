@@ -40,8 +40,9 @@ import static com.example.progetto.Utilities.REQUEST_IMAGE_CAPTURE;
 
 public class SignupTwoFragment extends Fragment {
 
-    private TextView placeTextView;
+    private TextView nameTextView;
     private TextView dateTextView;
+    private TextView placeTextView;
     private TextView descriptionTextView;
     private ImageView profileImageView;
 
@@ -56,17 +57,19 @@ public class SignupTwoFragment extends Fragment {
 
         final Activity activity = getActivity();
 
+        nameTextView = view.findViewById(R.id.reg_username);
+        dateTextView = view.findViewById(R.id.reg_birthday);
         placeTextView = view.findViewById(R.id.placeTextInputEditText);
-        dateTextView = view.findViewById(R.id.dateTextInputEditText);
-        descriptionTextView = view.findViewById(R.id.descriptionTextInputEditText);
+        descriptionTextView = view.findViewById(R.id.reg_description);
         ImageView profileImageView = view.findViewById(R.id.imageView);
 
         ListViewModel listViewModel = new ViewModelProvider((ViewModelStoreOwner) activity).get(ListViewModel.class);
         listViewModel.getSelected().observe(getViewLifecycleOwner(), new Observer<CardItem>() {
             @Override
             public void onChanged(CardItem cardItem) {
-                placeTextView.setText(cardItem.getPlace());
+                nameTextView.setText(cardItem.getUsername());
                 dateTextView.setText(cardItem.getDate());
+                placeTextView.setText(cardItem.getPlace());
                 descriptionTextView.setText(cardItem.getDescription());
                 String image_path = cardItem.getImageResource();
                 if (image_path.contains("ic_")) {
@@ -128,8 +131,9 @@ public class SignupTwoFragment extends Fragment {
                     }
 
                     addViewModel.addCardItem(new CardItem(imageUriString,
-                            placeTextView.getText().toString(),
+                            nameTextView.getText().toString(),
                             dateTextView.getText().toString(),
+                            placeTextView.getText().toString(),
                             descriptionTextView.getText().toString()));
 
                     addViewModel.setImageBitmpap(null);

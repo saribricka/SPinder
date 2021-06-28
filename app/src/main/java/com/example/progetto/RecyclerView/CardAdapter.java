@@ -95,6 +95,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
         return cardItemList.size();
     }
 
+    public List<CardItem> getItems() {
+        return cardItemList;
+    }
+
     /**
      * Method called when you have to filter a list (in our case the one with the trip
      * @return  filter that can be used to constrain data with a filtering pattern.
@@ -165,6 +169,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardViewHolder> implements
     public CardItem getItemFiltered(int position) {
 
         return cardItemList.get(position);
+    }
+
+    public void removeTopItem() {
+        cardItemList.remove(0);
+        notifyDataSetChanged();
     }
 
 }

@@ -23,6 +23,11 @@ import com.example.progetto.ViewModel.ListViewModel;
 
 import java.util.List;
 
+import swipeable.com.layoutmanager.OnItemSwiped;
+import swipeable.com.layoutmanager.SwipeableLayoutManager;
+import swipeable.com.layoutmanager.SwipeableTouchHelperCallback;
+import swipeable.com.layoutmanager.touchelper.ItemTouchHelper;
+
 public class HomePageFragment extends Fragment implements OnItemListener{
 
     private static final String LOG = "Home-Fragment_LAB";
@@ -30,6 +35,12 @@ public class HomePageFragment extends Fragment implements OnItemListener{
     private CardAdapter adapter;
     private RecyclerView recyclerView;
     private ListViewModel listViewModel;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Nullable
     @Override

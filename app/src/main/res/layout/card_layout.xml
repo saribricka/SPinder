@@ -48,7 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:text="@string/user_name"
+                    android:hint="@string/user_name"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="3dp"
-                    android:text="@string/birthday"
+                    android:hint="@string/birthday"
                     android:textAppearance="?attr/textAppearanceBody2" />
 
             </LinearLayout>
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:text="@string/city"
+                android:hint="@string/city"
                 android:textAppearance="?attr/textAppearanceBody2"/>
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
-                android:text="@string/bio_description"
+                android:hint="@string/bio_description"
                 android:textAppearance="?attr/textAppearanceBody2"/>
 
         </LinearLayout>

@@ -29,6 +29,11 @@ import com.example.progetto.ViewModel.ListViewModel;
 
 import java.util.List;
 
+import swipeable.com.layoutmanager.OnItemSwiped;
+import swipeable.com.layoutmanager.SwipeableLayoutManager;
+import swipeable.com.layoutmanager.SwipeableTouchHelperCallback;
+import swipeable.com.layoutmanager.touchelper.ItemTouchHelper;
+
 public class MainFragment extends Fragment implements OnItemListener{
 
     private static final String LOG = "Home-Fragment_LAB";
@@ -103,6 +108,45 @@ public class MainFragment extends Fragment implements OnItemListener{
         recyclerView.setHasFixedSize(true);
         final OnItemListener listener = this;
         adapter = new CardAdapter(activity, listener);
+        SwipeableTouchHelperCallback swipeableTouchHelperCallback = new SwipeableTouchHelperCallback(new OnItemSwiped() {
+            @Override
+            public void onItemSwiped() {
+                adapter.removeTopItem();
+            }
+
+            @Override
+            public void onItemSwipedLeft() {
+                Log.e("SWIPE", "LEFT");
+            }
+
+            @Override
+            public void onItemSwipedRight() {
+                Log.e("SWIPE", "RIGHT");
+            }
+
+            @Override
+            public void onItemSwipedUp() {
+                Log.e("SWIPE", "UP");
+            }
+
+            @Override
+            public void onItemSwipedDown() {
+                Log.e("SWIPE", "DOWN");
+            }
+        }) {
+            @Override
+            public int getAllowedSwipeDirectionsMovementFlags(RecyclerView.ViewHolder viewHolder) {
+                return ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT;
+            }
+        };
+        final ItemTouchHelper itemTouchHelper = new ItemTouchHelper(swipeableTouchHelperCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
+        recyclerView.setLayoutManager(new SwipeableLayoutManager()
+                .setAngle(10)
+                .setAnimationDuratuion(450)
+                .setMaxShowCount(3)
+                .setScaleGap(0.1f)
+                .setTransYGap(0));
         recyclerView.setAdapter(adapter);
     }
 

@@ -15,19 +15,25 @@ public class CardItem {
     private int id;
     @ColumnInfo(name = "item_image")
     private String imageResource;
+    @ColumnInfo(name = "item_user")
+    private String username;
+    @ColumnInfo(name = "item_date")
+    private String date;
     @ColumnInfo(name = "item_place")
     private String place;
     @ColumnInfo(name = "item_description")
     private String description;
-    @ColumnInfo(name = "item_date")
-    private String date;
 
-    public CardItem(String imageResource, String place, String description, String date) {
+    public CardItem(String imageResource, String username, String date, String place, String description) {
+        this.username = username;
         this.imageResource = imageResource;
         this.place = place;
         this.description = description;
         this.date = date;
     }
+
+
+    public String getUsername() { return username; }
 
     public String getImageResource() {
         return imageResource;

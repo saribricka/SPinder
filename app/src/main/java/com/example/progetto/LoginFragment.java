@@ -28,7 +28,7 @@ public class LoginFragment extends Fragment {
         view.findViewById(R.id.signupBt).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Utilities.insertFragment((AppCompatActivity) activity, new SignupFragment(), "SignupFragment");
+                Utilities.insertFragment((AppCompatActivity) activity, new SignupTotFragment(), "SignupFragment");
             }
         });
 
